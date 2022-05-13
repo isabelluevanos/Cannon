@@ -1,5 +1,9 @@
 """Cannon, hitting targets with projectiles.
 
+Programadores
+1. Isabel Cristina Valdes Luevanos
+2. Víctor Hugo Portilla Ortíz
+
 Exercises
 
 1. Keep score by counting target hits.
@@ -13,6 +17,7 @@ from turtle import *
 
 from freegames import vector
 
+"Initial values"
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
@@ -23,6 +28,7 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
+        """New velocities"""
         speed.x = (x + 200) / 15
         speed.y = (y + 200) / 15
 
@@ -70,6 +76,7 @@ def move():
 
     draw()
 
+    """Instead of ending the game, the target returns to its original x position"""
     for target in targets:
         if not inside(target):
             target.x = 200
